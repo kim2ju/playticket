@@ -14,6 +14,10 @@ export default function BottomTab() {
       setNowMenu(1);
     } else if (location.pathname == '/search') {
       setNowMenu(2);
+    } else if (location.pathname == '/chat') {
+      setNowMenu(3);
+    } else if (location.pathname == '/myinfo') {
+      setNowMenu(4);
     }
   }, [location.pathname])
 
@@ -21,7 +25,7 @@ export default function BottomTab() {
     <>
       <Outlet />
       <nav className="w-full h-[70px] fixed -bottom-px z-100 grid grid-rows-1 grid-cols-5 px-[23px] py-2 bg-white shadow-[0px_0px_8px_0px] shadow-[#000000]/10">
-        <Link to='/home' onClick={() => setNowMenu(0)}>
+        <Link to='/' onClick={() => setNowMenu(0)}>
           <div className="w-full h-full flex flex-col justify-center items-center gap-0.5">
             <HomeIcon className={`w-[28px] h-[28px] ${nowMenu == 0 ? 'text-purple-400' : 'text-black'}`} />
             <p className={`text-[11px] font-semibold leading-normal -tracking-[0.165] ${nowMenu == 0 ? 'text-purple-400' : 'text-black'}`}>
