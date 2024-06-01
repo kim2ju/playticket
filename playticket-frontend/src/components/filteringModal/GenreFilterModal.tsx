@@ -1,5 +1,7 @@
 import { CheckIcon } from "@heroicons/react/24/outline"
 
+const genreData = ['전체', '뮤지컬', '연극', '기타'];
+
 export default function GenreFilterModal({isModalOpen, setIsModalOpen, selectedGenre, setSelectedGenre} : 
     {isModalOpen: boolean, setIsModalOpen: (isModalOpen: boolean) => void, selectedGenre: string, setSelectedGenre: (selectedGenre: string) => void}) {
     const selectedOption = (label: string) => {
@@ -31,9 +33,9 @@ export default function GenreFilterModal({isModalOpen, setIsModalOpen, selectedG
             </div>
             <div className="fixed left-0 bottom-0 w-full pt-11 pb-6 px-6 flex flex-col gap-4 bg-white rounded-t-[28px] z-40">
                 <div className="text-[18px] font-bold pb-2 border-b">장르</div>
-                {selectedGenre == '전체' ? selectedOption('전체') : unselectedOption('전체')}
-                {selectedGenre == '뮤지컬' ? selectedOption('뮤지컬') : unselectedOption('뮤지컬')}
-                {selectedGenre == '연극' ? selectedOption('연극') : unselectedOption('연극')}
+                {genreData.map((genre) => (
+                    selectedGenre == genre ? selectedOption(genre) : unselectedOption(genre)
+                ))}
             </div>
             </>
         )}
