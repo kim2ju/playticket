@@ -8,6 +8,10 @@
     font-style: normal;
 }
 
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
 div {
     font-family: "Noto Sans KR", sans-serif;
     font-optical-sizing: auto;

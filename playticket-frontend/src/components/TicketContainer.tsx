@@ -8,7 +8,7 @@ export default function TicketContainer({data} : {data: TicketContainerProps}) {
     
     return (
         <>
-        <div className="flex gap-2 my-3">
+        <div className="flex gap-2 my-3 px-6">
             <div className="w-[120px] h-[120px] bg-gray-100 rounded-md" />
             <div className="flex-grow h-[120px] flex flex-col justify-center">
                 <div className="flex justify-between">
@@ -20,7 +20,7 @@ export default function TicketContainer({data} : {data: TicketContainerProps}) {
                 <div className="text-[12px] text-gray-400 tracking-tighter">{data.datetime} | {data.seatRank} {data.seat}</div>
                 <div className="text-[12px] text-gray-400 tracking-tighter">{data.cast}</div>
                 <div className="text-[16px] pt-0.5 pb-2.5 tracking-tighter">
-                    {data.discountName} {data.discountRate}%{data.additionalDiscount > 0 && ' + 자할'} {new Intl.NumberFormat().format(data.discountPrice)}원
+                    {data.discountName} {data.discountRate}%{data.additionalDiscount && ' + 자할'} {new Intl.NumberFormat().format(data.discountPrice)}원
                 </div>
                 <div className="flex gap-1">
                     {data.tags.map((tag, index) => (
