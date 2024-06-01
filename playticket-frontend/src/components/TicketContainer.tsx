@@ -9,7 +9,9 @@ export default function TicketContainer({data} : {data: TicketContainerProps}) {
     return (
         <>
         <div className="flex gap-2 my-3 px-6">
-            <div className="w-[120px] h-[120px] bg-gray-100 rounded-md" />
+            <img
+                src={data.img}
+                className="w-[120px] h-[120px] bg-gray-100 rounded-md" />
             <div className="flex-grow h-[120px] flex flex-col justify-center">
                 <div className="flex justify-between">
                     <div className="text-[16px] tracking-tighter">{data.type} {data.title}</div>

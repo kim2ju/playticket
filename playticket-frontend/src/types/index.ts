@@ -12,5 +12,6 @@ export interface TicketContainerProps {
     discountRate: number;
     additionalDiscount: number;
     discountPrice: number;
+    img: string;
     tags: string[];
 }

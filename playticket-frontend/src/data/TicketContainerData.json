@@ -12,6 +12,7 @@
         "discountRate": 20,
         "additionalDiscount": false,
         "discountPrice": 72400,
+        "img": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDEyMTBfMjA3%2FMDAxNjA3NTM3MTMwMjQ5.DY_ZzNzij5XVAdwUxw995NVMzuNeDCCzfUoTxjYr69sg.jBIyxfXBL6hr4EhqlGym1OQURCHhkJePEH30Fjq-vj0g.JPEG.rpals123%2FIMG_5027.JPG&type=sc960_832",
         "tags": ["증빙필요", "자할가능"]
     }, {
         "id": 2,
@@ -26,6 +27,7 @@
         "discountRate": 40,
         "additionalDiscount": false,
         "discountPrice": 38000,
+        "img": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20140915_200%2Fnepura_141077095533870OMl_JPEG%2F%25C7%25C1%25B8%25AE%25BD%25C7%25B6%25F3_%25C0%25DA%25B8%25AE.jpg&type=sc960_832",
         "tags": ["증빙필요"]
     }, {
         "id": 3,
@@ -40,6 +42,7 @@
         "discountRate": 25,
         "additionalDiscount": true,
         "discountPrice": 35000,
+        "img": "https://search.pstatic.net/common/?src=http%3A%2F%2Fcafefiles.naver.net%2FMjAxODEwMTJfMjU0%2FMDAxNTM5MzIxMDQ5NjAw.9KmR_WL5uGQew3HcmMJ67ABvFzYQkvudYim50H8Co_Yg.324OFJlnQRFqcVVCr9NiC0S_LGW63p_CoxHXelwkvEMg.PNG.feer3331%2F%25C1%25A6%25B8%25F1_%25BE%25F8%25C0%25BD.png&type=sc960_832",
         "tags": ["증빙필요", "자할가능"]
     }, {
         "id": 4,
@@ -54,6 +57,7 @@
         "discountRate": 60,
         "additionalDiscount": false,
         "discountPrice": 28900,
+        "img": "https://search.pstatic.net/common/?src=http%3A%2F%2Fcafefiles.naver.net%2FMjAxODA3MDFfMTI4%2FMDAxNTMwNDQ1NTYxNDAy.6tVaxKKXyU4VgQPciYhbxXuI_voVid-1m8ks4skLcccg.ooMynDb328pHCijVA9QGf68E51hfS0GVI8BSkXeoWgUg.PNG.loveroma0082%2F%25BF%25F4%25B4%25C2.PNG&type=sc960_832",
         "tags": ["자할가능"]
     }, {
         "id": 5,
@@ -68,6 +72,7 @@
         "discountRate": 60,
         "additionalDiscount": false,
         "discountPrice": 28900,
+        "img": "https://search.pstatic.net/common/?src=http%3A%2F%2Fcafefiles.naver.net%2FMjAxODA3MDFfMTI4%2FMDAxNTMwNDQ1NTYxNDAy.6tVaxKKXyU4VgQPciYhbxXuI_voVid-1m8ks4skLcccg.ooMynDb328pHCijVA9QGf68E51hfS0GVI8BSkXeoWgUg.PNG.loveroma0082%2F%25BF%25F4%25B4%25C2.PNG&type=sc960_832",
         "tags": ["자할가능"]
     }]
 }
