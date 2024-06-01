@@ -1,0 +1,63 @@
+{
+    "data": [{
+        "id": 1,
+        "type": "뮤지컬",
+        "title": "웨스턴 스토리",
+        "datetime": "5/11 (토) 14:00",
+        "seatRank": "R석",
+        "seat": "1층 13열 중블 13-16",
+        "cast": "전민지 정욱진 정민 한보라 김승용 박세훈 김현기",
+        "originalPrice": 88000,
+        "reservationFee": 2000,
+        "discountName": "직장인 할인",
+        "discountRate": 20,
+        "additionalDiscount": 0,
+        "discountPrice": 72400,
+        "tags": ["증빙필요", "자할가능"]
+    }, {
+        "id": 2,
+        "type": "뮤지컬",
+        "title": "브론테",
+        "datetime": "5/23 (목) 20:00",
+        "seatRank": "S석",
+        "seat": "1층 M열 중블 9-12",
+        "cast": "정가희, 이지연, 박새힘",
+        "originalPrice": 60000,
+        "reservationFee": 2000,
+        "discountName": "청소년 할인",
+        "discountRate": 40,
+        "additionalDiscount": 0,
+        "discountPrice": 38000,
+        "tags": ["증빙필요"]
+    }, {
+        "id": 3,
+        "type": "연극",
+        "title": "아트",
+        "datetime": "5/10 (금) 20:00",
+        "seatRank": "S석",
+        "seat": "O열 왼블 21-24",
+        "cast": "최재웅, 박은석, 박정복",
+        "originalPrice": 66000,
+        "reservationFee": 1000,
+        "discountName": "재관람 할인",
+        "discountRate": 25,
+        "additionalDiscount": 15500,
+        "discountPrice": 35000,
+        "tags": ["증빙필요", "자할가능"]
+    }, {
+        "id": 4,
+        "type": "뮤지컬",
+        "title": "광염소나타",
+        "datetime": "5/10 (금) 20:00",
+        "seatRank": "S석",
+        "seat": "구매 선착순",
+        "cast": "박준휘, 김준영, 임병근",
+        "originalPrice": 66000,
+        "reservationFee": 0,
+        "discountName": "위메프",
+        "discountRate": 60,
+        "additionalDiscount": 0,
+        "discountPrice": 28900,
+        "tags": ["자할가능"]
+    }]
+}
