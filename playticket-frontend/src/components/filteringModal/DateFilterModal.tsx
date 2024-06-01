@@ -18,7 +18,7 @@ export default function DateFilterModal({isModalOpen, setIsModalOpen, selectedDa
                     type="date"
                     value={selectedDate}
                     onChange={onChangeDate}
-                    className="border rounded-lg p-2 text-lg"
+                    className="border rounded-lg p-2 text-lg cursor-pointer"
                 />
             </div>
             </>
