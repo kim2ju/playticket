@@ -59,5 +59,20 @@
         "additionalDiscount": 0,
         "discountPrice": 28900,
         "tags": ["자할가능"]
+    }, {
+        "id": 5,
+        "type": "뮤지컬",
+        "title": "광염소나타",
+        "datetime": "5/10 (금) 20:00",
+        "seatRank": "S석",
+        "seat": "구매 선착순",
+        "cast": "박준휘, 김준영, 임병근",
+        "originalPrice": 66000,
+        "reservationFee": 0,
+        "discountName": "위메프",
+        "discountRate": 60,
+        "additionalDiscount": 0,
+        "discountPrice": 28900,
+        "tags": ["자할가능"]
     }]
 }

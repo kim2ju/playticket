@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function HomeNav() {
     return (
-        <nav className="w-full h-[50px] flex items-center justify-between bg-white ">
+        <nav className="fixed w-full h-[52px] flex items-center justify-between bg-white px-6 border-b">
             <Logo />
             <div className="flex items-center gap-4">
                 <Link to="/search">
