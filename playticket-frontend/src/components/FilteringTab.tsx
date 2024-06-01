@@ -1,19 +1,22 @@
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import GenreFilterModal from "./filteringModal/GenreFilterModal";
+import DateFilterModal from "./filteringModal/DateFilterModal";
 
 export default function FilteringTab() {
     const [isGenreModalOpen, setIsGenreModalOpen] = useState<boolean>(false);
-    const [selectedGenres, setSelectedGenres] = useState<string>('전체');
+    const [isDateModalOpen, setIsDateModalOpen] = useState<boolean>(false);
+    const [selectedGenre, setSelectedGenre] = useState<string>('전체');
+    const [selectedDate, setSelectedDate] = useState<string>('');
 
     const filterings = [
         {
-            name: '전체',
+            name: selectedGenre,
             onClick: () => {setIsGenreModalOpen(true)}
         },
         {
-            name: '날짜',
-            onClick: () => {}
+            name: selectedDate == '' ? '날짜' : selectedDate,
+            onClick: () => {setIsDateModalOpen(true)}
         },
         {
             name: '배우',
@@ -45,8 +48,13 @@ export default function FilteringTab() {
         <GenreFilterModal
             isModalOpen={isGenreModalOpen}
             setIsModalOpen={setIsGenreModalOpen}
-            selectedGenres={selectedGenres}
-            setSelectedGenres={setSelectedGenres} />
+            selectedGenre={selectedGenre}
+            setSelectedGenre={setSelectedGenre} />
+        <DateFilterModal
+            isModalOpen={isDateModalOpen}
+            setIsModalOpen={setIsDateModalOpen}
+            selectedDate={selectedDate}
+            setSelectedDate={setSelectedDate} />
         </>
     )
 }

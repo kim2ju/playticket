@@ -7,10 +7,9 @@ export interface TicketContainerProps {
     seat: string;
     cast: string;
     originalPrice: number;
-    reservationFee: number;
     discountName: string;
     discountRate: number;
-    additionalDiscount: number;
+    additionalDiscount: boolean;
     discountPrice: number;
     img: string;
     tags: string[];
