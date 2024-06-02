@@ -4,16 +4,21 @@ import GenreFilterModal from "./filteringModal/GenreFilterModal";
 import DateFilterModal from "./filteringModal/DateFilterModal";
 import ActorFilterModal from "./filteringModal/ActorFilterModal";
 import SeatFilterModal from "./filteringModal/SeatFilterModal";
+import PriceFilterModal from "./filteringModal/PriceFilterModal";
+import { formatPrice } from "../utils";
 
 export default function FilteringTab() {
     const [isGenreModalOpen, setIsGenreModalOpen] = useState<boolean>(false);
     const [isDateModalOpen, setIsDateModalOpen] = useState<boolean>(false);
     const [isActorModalOpen, setIsActorModalOpen] = useState<boolean>(false);
     const [isSeatModalOpen, setIsSeatModalOpen] = useState<boolean>(false);
+    const [isPriceModalOpen, setIsPriceModalOpen] = useState<boolean>(false);
     const [selectedGenre, setSelectedGenre] = useState<string>('전체');
     const [selectedDate, setSelectedDate] = useState<string>('');
     const [selectedActors, setSelectedActors] = useState<string[]>([]);
     const [selectedSeats, setSelectedSeats] = useState<string[]>([]);
+    const [minPrice, setMinPrice] = useState<number>(0);
+    const [maxPrice, setMaxPrice] = useState<number>(0);
 
     const filterings = [
         {
@@ -33,14 +38,14 @@ export default function FilteringTab() {
             onClick: () => {setIsSeatModalOpen(true)}
         },
         {
-            name: '가격',
-            onClick: () => {}
+            name: minPrice === 0 && maxPrice === 0 ? '가격' : `${formatPrice(minPrice)}원 ~ ${formatPrice(maxPrice)}원`,
+            onClick: () => {setIsPriceModalOpen(true)}
         }
     ];
 
     return (
         <>
-        <div className="flex gap-3 items-center px-6 mt-3 mb-4 overflow-scroll scrollbar-hide">
+        <div className="flex gap-3 items-center px-4 mt-3 mb-4 overflow-scroll scrollbar-hide">
             {filterings.map((filtering, index) => (
                 <button 
                     key={index}
@@ -71,6 +76,13 @@ export default function FilteringTab() {
             setIsModalOpen={setIsSeatModalOpen}
             selectedSeats={selectedSeats}
             setSelectedSeats={setSelectedSeats} />
+        <PriceFilterModal
+            isModalOpen={isPriceModalOpen}
+            setIsModalOpen={setIsPriceModalOpen}
+            minPrice={minPrice}
+            setMinPrice={setMinPrice}
+            maxPrice={maxPrice}
+            setMaxPrice={setMaxPrice} />
         </>
     )
 }
