@@ -1,5 +1,5 @@
 import { BellIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import Logo from "./Logo";
+import Logo from "../Logo";
 import { Link } from "react-router-dom";
 
 export default function HomeNav() {

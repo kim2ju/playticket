@@ -1,8 +1,10 @@
+import { PlusIcon } from "@heroicons/react/24/solid";
 import FilteringTab from "../components/FilteringTab";
-import HomeNav from "../components/HomeNav";
+import HomeNav from "../components/nav/HomeNav";
 import TicketContainer from "../components/TicketContainer";
 import TicketContainerData from "../data/TicketContainerData.json";
 import { TicketContainerProps } from "../types";
+import { Link } from "react-router-dom";
 
 const data = TicketContainerData.data;
 
@@ -19,6 +21,11 @@ const HomePage = () => {
                     </>
                 ))}
             </div>
+            <Link to="/ticket-write">
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500 fixed bottom-[86px] right-4 shadow-lg shadow-stone-400">
+                    <PlusIcon className="w-[24px] h-[24px] text-white" />
+                </div>
+            </Link>
         </div>
     )
 }
