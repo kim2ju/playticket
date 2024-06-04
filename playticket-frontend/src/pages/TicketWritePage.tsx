@@ -1,5 +1,9 @@
 import { useState } from "react";
 import TicketWriteNav from "../components/nav/TicketWriteNav";
+import { collection, addDoc } from "firebase/firestore"; 
+import { db, storage } from "../utils/fbase";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { v4 as uuidv4 } from "uuid";
 
 const TicketWritePage = () => {
     const [genre, setGenre] = useState('');
@@ -7,16 +11,41 @@ const TicketWritePage = () => {
     const [datetime, setDatetime] = useState('');
     const [seatRank, setSeatRank] = useState('');
     const [seat, setSeat] = useState('');
-    const [seatImg, setSeatImg] = useState('');
+    const [seatImg, setSeatImg] = useState<string | Blob>('' as unknown as Blob);
     const [cast, setCast] = useState('');
     const [discount, setDiscount] = useState('');
     const [price, setPrice] = useState('');
     const [tags, setTags] = useState<string []>([]);
     const [description, setDescription] = useState('');
 
-    const handleSubmit = (e: { preventDefault: () => void; }) => {
+    const handleSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         console.log({genre, title, datetime, seatRank, seat, seatImg, cast, discount, price, tags, description});
+
+        try {
+            const storageRef = ref(storage, `${uuidv4()}`);
+            await uploadBytesResumable(storageRef, seatImg as Blob).then((uploadTaskSnapshot) => {
+                console.log('Uploaded a blob or file!');
+                getDownloadURL(uploadTaskSnapshot.ref).then((downloadURL) => {
+                    addDoc(collection(db, "tickets"), {
+                        genre: genre,
+                        title: title,
+                        datetime: datetime,
+                        seatRank: seatRank,
+                        seat: seat,
+                        seatImg: downloadURL,
+                        cast: cast,
+                        discount: discount,
+                        price: price,
+                        tags: tags,
+                        description: description
+                    });
+                });
+            });
+            alert("성공적으로 등록되었습니다.")
+        } catch (e) {
+            alert("등록에 실패했습니다.")
+        }
     };
 
     return (
@@ -80,7 +109,7 @@ const TicketWritePage = () => {
                         <input
                             type="file"
                             className="w-full mt-1 p-2 border rounded-lg"
-                            value={seatImg}
+                            value={seatImg as string | undefined}
                             onChange={(e) => setSeatImg(e.target.value)}
                             required />
                     </div>
