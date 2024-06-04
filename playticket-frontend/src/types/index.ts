@@ -13,4 +13,8 @@ export interface TicketContainerProps {
     discountPrice: number;
     img: string;
     tags: string[];
+    discount: string;
+    price: number;
+    seatImg: string;
+    genre: string;
 }

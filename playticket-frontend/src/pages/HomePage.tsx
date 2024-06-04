@@ -2,13 +2,30 @@ import { PlusIcon } from "@heroicons/react/24/solid";
 import FilteringTab from "../components/FilteringTab";
 import HomeNav from "../components/nav/HomeNav";
 import TicketContainer from "../components/TicketContainer";
-import TicketContainerData from "../data/TicketContainerData.json";
 import { TicketContainerProps } from "../types";
 import { Link } from "react-router-dom";
-
-const data = TicketContainerData.data;
+import { useEffect, useState } from "react";
+import { db } from "../utils/fbase";
+import { getDocs, query, collection, orderBy } from "firebase/firestore";
 
 const HomePage = () => {
+    const[data, setData] = useState<TicketContainerProps[]>([]);
+
+    useEffect(() => {
+        getData();
+    }, []);
+
+    const getData = async () => {
+        const q = query(collection(db, "tickets"), orderBy("createdAt", "desc"));
+        const newData: TicketContainerProps[] = []
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+            return newData.push(doc.data() as TicketContainerProps);
+        });
+        console.log(newData);
+        setData(newData);
+    }
+
     return (
         <div className="w-full h-full flex flex-col justify-between">
             <HomeNav />
